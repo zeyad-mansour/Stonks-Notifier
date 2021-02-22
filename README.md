@@ -8,8 +8,8 @@ lorem ipsum
 - lorem ipsum
 - lorem ipsum
 
-## Setup/Dependncies
-lorem ipsum
+## Setup/Dependncies ✅    
+`pip install tweepy`
 
 ## Screenshots
 Include logo/demo screenshot etc.
