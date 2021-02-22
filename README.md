@@ -1,4 +1,4 @@
-## Stonks-Notifier [INCOMPLETE]
+## Stonks Notifier 🚀🚀📈 [INCOMPLETE]
 Sends a notification when Elon Musk tweets about stonks or crypto.
 
 ## Motivation
