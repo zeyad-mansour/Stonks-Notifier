@@ -8,7 +8,7 @@ lorem ipsum
 - lorem ipsum
 - lorem ipsum
 
-## Setup/Dependncies
+## Setup/Dependencies ✅
 lorem ipsum
 
 ## Screenshots
