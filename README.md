@@ -8,8 +8,9 @@ lorem ipsum
 - lorem ipsum
 - lorem ipsum
 
+## Setup/Dependncies
+lorem ipsum
+
 ## Screenshots
 Include logo/demo screenshot etc.
 
-## Setup/Dependncies
-lorem ipsum
