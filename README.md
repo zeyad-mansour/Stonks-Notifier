@@ -8,9 +8,9 @@ lorem ipsum
 - lorem ipsum
 - lorem ipsum
 
-## Setup/Dependncies ✅    
+## Setup/Dependencies ✅    
 - Python 3.6+
-`pip install twint`
+`pip install twint` <br/>
 `pip install datetime`
 
 ## Screenshots
