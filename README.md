@@ -9,7 +9,9 @@ lorem ipsum
 - lorem ipsum
 
 ## Setup/Dependncies ✅    
-`pip install tweepy`
+- Python 3.6+
+`pip install twint`
+`pip install datetime`
 
 ## Screenshots
 Include logo/demo screenshot etc.
