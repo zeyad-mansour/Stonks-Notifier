@@ -5,15 +5,15 @@ import time as t
 import sys
 import os
 
-account_sid = 'ACcdf64dd3f2944ddb49e7247198426a7c' #these can be replaced with other twillio credentials
-auth_token = '6e959bbbea93f12b3010d5b9983bdb9a' #these can be replaced with other twillio credentials
+account_sid = 'ACcdf64dd3f2944ddb49e7247198426a7c' # this can be replaced with other twillio credentials
+auth_token = '6e959bbbea93f12b3010d5b9983bdb9a' # this can be replaced with other twillio credentials
 client = Client(account_sid, auth_token)
 
 def setup():
     global username
     global phoneNum
     username = str(input("Enter the username of the Twitter account: "))
-    phoneNum = str(input("Enter the phone number to recieve notifications: ")) #you must specify your country code (e.g. if it's a U.S. number, add "+1" to the beginning)
+    phoneNum = str(input("Enter the phone number to recieve notifications: ")) # you must specify your country code (e.g. if it's a U.S. number, add "+1" to the beginning)
 
 def main():
     keywords = open("keywords.txt", "r").read().split(", ")
@@ -38,13 +38,10 @@ def notifier(about, tweet, sinceTime):
     message = client.messages \
                 .create(
                      body = body,
-                     from_='12673101877', #this can be replaced with another twillio number
+                     from_='12673101877', # this can be replaced with another twillio number
                      to = phoneNum
                  )
-
     print("SMS Message Successfully Sent!")
-
-
 
 if __name__ == '__main__':
     setup()
