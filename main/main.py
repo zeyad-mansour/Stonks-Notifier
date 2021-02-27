@@ -5,8 +5,9 @@ import time as t
 import sys
 import os
 
-account_sid = 'ACcdf64dd3f2944ddb49e7247198426a7c' # this can be replaced with other twillio credentials
-auth_token = '6e959bbbea93f12b3010d5b9983bdb9a' # this can be replaced with other twillio credentials
+account_sid = 'TWILIO_ACCOUNT_SID' # REPLACE WITH TWILLIO CREDENTIALS
+auth_token = 'TWILIO_AUTH_TOKEN' # REPLACE WITH TWILLIO CREDENTIALS
+twillioPhoneNum = "xxxxxxxxxxx" # REPLACE WITH TWILLIO PHONE NUMBER
 client = Client(account_sid, auth_token)
 
 def setup():
@@ -32,13 +33,13 @@ def main():
         t.sleep(1) # check every 1 second
 
 def notifier(about, tweet, sinceTime):
-    
+    global twillioPhoneNumber
     body = "<" + username + "> just tweeted about: " + about + "\nhttps://twitter.com/" + username
     
     message = client.messages \
                 .create(
                      body = body,
-                     from_='12673101877', # this can be replaced with another twillio number
+                     from_= twillioPhoneNum,
                      to = phoneNum
                  )
     print("SMS Message Successfully Sent!")
