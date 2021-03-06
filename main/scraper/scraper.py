@@ -1,10 +1,13 @@
 import twint
+import requests, bs4
 import os, sys
+import urllib
+from lxml import html
 from io import StringIO
 from datetime import datetime
 
-class Capturing(list): # allows for the modificiation of the output for twint functions
-    def __enter__(self):
+class Capturing(list): # didn't realize twint had a format function :p 
+    def __enter__(self):    
         self._stdout = sys.stdout
         sys.stdout = self._stringio = StringIO()
         return self
@@ -18,6 +21,7 @@ def search_new_tweet(sinceTime, username):
     c.Username = username
     c.Since = sinceTime
     c.Limit = 1
+    c.Output = "output.csv"
     with Capturing() as output:
         twint.run.Search(c)
     if len(output) == 0:
@@ -30,6 +34,27 @@ def search_new_tweet(sinceTime, username):
 def search_keyword(keyword, tweet):
     if keyword.lower() in tweet.lower():
         return keyword
+
+def getImage(URL_String):
+    rel_path = "./classifier/temp"
         
-        
+    page=requests.get(URL_String)
+    print(page.status_code)
+    tree=html.fromstring(page.content)
+ 
+    print(tree)
+    tweet_imgs=tree.xpath('//div[@class="AdaptiveMedia-singlePhoto"]//img[@src]')
+ 
+    del page, tree
+    print("Array of tweet images fetched")
+    print(tweet_imgs)
+    img_num = 1
+    for tweet_img in tweet_imgs:
+        print("Image " + tweet_img.attrib['src'] + " processed")
+        image_address=requests.get(tweet_img.attrib['src'])
+        resource=image_address.content
+        output=open(FOLDER_URL + "/" + "Image" + str(img_num) + ".jpg", "wb")
+        output.write(resource)
+        output.close()
+        img_num=img_num+1
 
