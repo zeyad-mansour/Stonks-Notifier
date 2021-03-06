@@ -15,7 +15,9 @@ lorem ipsum
 ```
 pip install twint
 pip install twilio
-pip install datetime
+pip install bs4
+pip install lxml
+pip install requests
 ```
 
 ## Screenshots
