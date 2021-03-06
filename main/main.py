@@ -1,5 +1,5 @@
 from scraper.scraper import search_new_tweet, search_keyword, getImage
-from image_classifier.classifier import detectionObject
+#from image_classifier.classifier import detectionObject
 from datetime import datetime
 from twilio.rest import Client
 import time as t
@@ -33,6 +33,7 @@ def main():
                 notifier(', '.join(w), returnVar, sinceTime)
             elif "t.co" in returnVar: #detects an image
                 getImage(returnVar)
+                #(not finished)
         t.sleep(1) # check every 1 second
 
 def notifier(about, tweet, sinceTime):
