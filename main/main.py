@@ -1,5 +1,4 @@
-from scraper.scraper import search_new_tweet, search_keyword, getImage
-#from image_classifier.classifier import detectionObject
+from scraper.scraper import search_new_tweet, search_keyword
 from datetime import datetime
 from twilio.rest import Client
 import time as t
@@ -31,15 +30,13 @@ def main():
                 w = [i for i in w if i]
             if w: # if at least one keyword matches
                 notifier(', '.join(w), returnVar, sinceTime)
-            elif "t.co" in returnVar: #detects an image
-                getImage(returnVar)
-                #(not finished)
         t.sleep(1) # check every 1 second
 
 def notifier(about, tweet, sinceTime):
     global twillioPhoneNumber
-    body = "<" + username + "> just tweeted about: " + about + "\nhttps://twitter.com/" + username
-
+    body = "<{username}> just tweeted about: {about} \nhttps://twitter.com/" + username
+    file = open("output.txt","a")
+    file_object.write(body)
     message = client.messages \
                 .create(
                      body = body,

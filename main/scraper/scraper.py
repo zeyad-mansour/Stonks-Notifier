@@ -34,7 +34,3 @@ def search_new_tweet(sinceTime, username):
 def search_keyword(keyword, tweet):
     if keyword.lower() in tweet.lower():
         return keyword
-
-def getImage(URL_String):
-    rel_path = "./image_classifier/temp"
-    #(not finished)
