@@ -1,12 +1,5 @@
-## Stonks Notifier 🚀🚀📈 [IN DEVELOPMENT]
+## Stonks Notifier 🚀🚀📈 
 Sends a notification when Elon Musk (or some other account) tweets about stonks or crypto.
-
-## Motivation
-lorem ipsum
-
-## Features
-- Text detection
-- Image/media detection (not yet)
 
 ## Setup/Dependencies (Python 3.6 - 3.8) ✅    
 1. Sign up for a free [Twillio account](https://www.twilio.com/try-twilio) for a unique `ACCOUNT_SID, AUTH_TOKEN`, and phone number. Those must be entered into the [main.py](/main/main.py) file. <br>
@@ -19,7 +12,3 @@ pip install bs4
 pip install lxml
 pip install requests
 ```
-
-## Screenshots
-Include logo/demo screenshot etc.
-
